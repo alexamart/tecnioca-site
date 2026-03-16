@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="About Us - Tecnioca" lang="en">
+  <Header slot="header" lang="en" />
+  
+  <main class="min-h-screen">
+    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold font-display mb-4">About Us</h1>
+        <p class="text-xl text-blue-100">More than 20 years of excellence in industrial inspection</p>
+      </div>
+    </div>
+
+    <section class="py-20 bg-white dark:bg-slate-800">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-4xl font-bold font-display mb-8 text-slate-900 dark:text-white">Our History</h2>
+        <p class="text-lg text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+          Tecnioca is a company specialized in industrial inspection and control with more than 20 years of experience in the sector.
+        </p>
+        <p class="text-lg text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+          We are committed to excellence, safety and regulatory compliance in all our services.
+        </p>
+        <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+          Our team of highly qualified professionals works to ensure that each inspection is carried out according to the highest quality standards.
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer slot="footer" lang="en" />
+</BaseLayout>

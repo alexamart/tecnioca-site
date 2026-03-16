@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Historia - Tecnioca" lang="es">
+  <Header slot="header" lang="es" />
+  
+  <main class="min-h-screen">
+    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold font-display mb-4">Nuestra Historia</h1>
+        <p class="text-xl text-blue-100">20 años de experiencia en inspección industrial</p>
+      </div>
+    </div>
+
+    <section class="py-20 bg-white dark:bg-slate-800">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+          Desde su fundación hace más de 20 años, Tecnioca ha sido un referente en el sector de la inspección y control industrial.
+        </p>
+        <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+          Nuestro compromiso con la excelencia y la seguridad nos ha permitido ganarnos la confianza de cientos de clientes en toda España.
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer slot="footer" lang="es" />
+</BaseLayout>

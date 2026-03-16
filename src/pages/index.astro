@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.tsx';
+---
+
+<BaseLayout title="Tecnioca - Servicios de inspección y control industrial" lang="es">
+  <Header slot="header" lang="es" />
+  
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/images/hero.jpg" alt="Servicios de Tecnioca" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/70 to-blue-900/80"></div>
+    </div>
+
+    <div class="relative z-10 container mx-auto px-4 py-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-6">
+          <span class="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            ORGANISMO DE CONTROL AUTORIZADO
+          </span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold font-display text-white mb-6 leading-tight">
+          Excelencia en
+          <span class="block text-blue-400">Inspección Industrial</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          Más de 20 años de experiencia en control y verificación de instalaciones industriales,
+          garantizando la seguridad y cumplimiento normativo en toda España.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="/contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+            Solicitar Inspección
+          </a>
+          <a href="/quienes-somos" class="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+            Conócenos
+          </a>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <div class="text-3xl font-bold text-blue-400 mb-2">500+</div>
+            <div class="text-slate-300">Instalaciones Inspeccionadas</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <div class="text-3xl font-bold text-blue-400 mb-2">20+</div>
+            <div class="text-slate-300">Años de Experiencia</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <div class="text-3xl font-bold text-blue-400 mb-2">100%</div>
+            <div class="text-slate-300">Cumplimiento Normativo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 bg-slate-50 dark:bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold font-display text-slate-900 dark:text-white mb-4">
+          Nuestros Servicios
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          Ofrecemos una amplia gama de servicios de inspección y control industrial,
+          cumpliendo con las normativas más exigentes de seguridad y calidad.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard 
+          title="OCA - Baja tensión" 
+          description="Inspecciones iniciales y periódicas (cada 5 años) en instalaciones eléctricas de baja tensión." 
+          image="/images/baja-tension.jpg" 
+          link="/baja-tension" 
+          client:load 
+        />
+        <ServiceCard 
+          title="OCA - Alta tensión" 
+          description="Centros de Transformación de hasta 30kV y Líneas Eléctricas de Alta Tensión." 
+          image="/images/alta-tension.jpg" 
+          link="/alta-tension" 
+          client:load 
+        />
+        <ServiceCard 
+          title="OCA - Equipos a presión" 
+          description="Inspecciones en el lugar de emplazamiento y periódicas, de acuerdo a lo estipulado en la normativa." 
+          image="/images/equipos-presion.jpg" 
+          link="/equipos-a-presion" 
+          client:load 
+        />
+        <ServiceCard 
+          title="OCA - Gases combustibles" 
+          description="Inspecciones iniciales y periódicas según lo estipulado en la normativa aplicable." 
+          image="/images/gases-combustibles.jpg" 
+          link="/gases-combustibles" 
+          client:load 
+        />
+        <ServiceCard 
+          title="EICI - Baja tensión (no industriales)" 
+          description="Inspecciones según la Orden 9344/2003 del Consejero de Economía e Innovación Tecnológica." 
+          image="/images/eici-baja-tension.jpg" 
+          link="/baja-tension-no-industriales" 
+          client:load 
+        />
+        <ServiceCard 
+          title="EICI - Equipos a presión" 
+          description="Inspecciones según la Orden de 23 de marzo de 2016 de la Consejería de Economía, Empleo y Hacienda." 
+          image="/images/eici-equipos-presion.jpg" 
+          link="/equipos-a-presion-2" 
+          client:load 
+        />
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/servicios" class="inline-flex items-center space-x-2 bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+          <span>Ver Todos los Servicios</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" lang="es" />
+</BaseLayout>

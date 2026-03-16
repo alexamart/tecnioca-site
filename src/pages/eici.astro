@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="EICI - Tecnioca" lang="es">
+  <Header slot="header" lang="es" />
+  
+  <main class="min-h-screen">
+    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold font-display mb-4">Servicios EICI</h1>
+        <p class="text-xl text-blue-100">Entidad de Inspección Industrial Certificada</p>
+      </div>
+    </div>
+
+    <section class="py-20 bg-white dark:bg-slate-800">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold font-display mb-6 text-slate-900 dark:text-white">Servicios de Inspección EICI</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white mb-2">Baja Tensión (No Industriales)</h3>
+            <p class="text-slate-700 dark:text-slate-300">Inspecciones según la normativa aplicable en instalaciones de baja tensión para uso no industrial.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white mb-2">Equipos a Presión</h3>
+            <p class="text-slate-700 dark:text-slate-300">Inspecciones certificadas de equipos a presión conforme a la normativa vigente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer slot="footer" lang="es" />
+</BaseLayout>

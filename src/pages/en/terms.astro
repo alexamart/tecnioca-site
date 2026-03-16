@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Terms of Service - Tecnioca" lang="en">
+  <Header slot="header" lang="en" />
+  
+  <main class="min-h-screen">
+    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold font-display mb-4">Terms of Service</h1>
+      </div>
+    </div>
+
+    <section class="py-20 bg-white dark:bg-slate-800">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+          These Terms of Service govern the use of our industrial inspection services. By using our services, you agree to be bound by these terms.
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer slot="footer" lang="en" />
+</BaseLayout>

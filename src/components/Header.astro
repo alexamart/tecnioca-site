@@ -1,0 +1,111 @@
+---
+import ThemeToggle from './ThemeToggle.tsx';
+import LanguageSwitcher from './LanguageSwitcher.tsx';
+
+export interface Props {
+  lang?: string;
+}
+
+const { lang = 'es' } = Astro.props;
+const isEnglish = lang === 'en';
+---
+
+<header class="bg-white dark:bg-slate-900 shadow-lg border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+  <!-- Top bar -->
+  <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center space-x-6 text-sm">
+        <div class="flex items-center space-x-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          <span>(+34) 919 395 212</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+          </svg>
+          <span>contacto@tecnioca.es</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+          </svg>
+          <span>{isEnglish ? 'Mon-Fri 9:00-18:00' : 'Lun-Vie 9:00-18:00'}</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-3">
+        <LanguageSwitcher client:load />
+        <ThemeToggle client:load />
+      </div>
+    </div>
+  </div>
+
+  <!-- Main header -->
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="/images/logo.png" alt="Tecnioca" class="h-12 w-auto" />
+        <div class="hidden md:block">
+          <h1 class="text-xl font-bold font-display text-slate-900 dark:text-white">TECNIOCA</h1>
+          <p class="text-sm text-slate-600 dark:text-slate-400">{isEnglish ? 'Industrial Inspection & Control' : 'Inspección y Control Industrial'}</p>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a href={isEnglish ? '/en' : '/'} class="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Home</a>
+
+        <div class="relative group">
+          <button class="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors flex items-center space-x-1">
+            <span>{isEnglish ? 'Company' : 'Empresa'}</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="py-2">
+              <a href={isEnglish ? '/en/about' : '/quienes-somos'} class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-blue-600">{isEnglish ? 'About Us' : 'Quiénes Somos'}</a>
+              <a href={isEnglish ? '/en/history' : '/historia'} class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-blue-600">{isEnglish ? 'History' : 'Historia'}</a>
+              <a href={isEnglish ? '/en/team' : '/equipo'} class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-blue-600">{isEnglish ? 'Our Team' : 'Nuestro Equipo'}</a>
+              <a href={isEnglish ? '/en/mission' : '/mision'} class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-blue-600">{isEnglish ? 'Mission & Values' : 'Misión y Valores'}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors flex items-center space-x-1">
+            <span>{isEnglish ? 'Services' : 'Servicios'}</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="py-2">
+              <a href={isEnglish ? '/en/oca' : '/oca'} class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-blue-600">{isEnglish ? 'Control Organization (OCA)' : 'Organismo de Control (OCA)'}</a>
+              <a href={isEnglish ? '/en/eici' : '/eici'} class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-blue-600">{isEnglish ? 'Industrial Inspection Entity (EICI)' : 'Entidad de Inspección Industrial (EICI)'}</a>
+              <a href={isEnglish ? '/en/other-services' : '/otros-servicios'} class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-blue-600">{isEnglish ? 'Other Services' : 'Otros Servicios'}</a>
+            </div>
+          </div>
+        </div>
+
+        <a href={isEnglish ? '/en/accreditations' : '/acreditaciones'} class="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">{isEnglish ? 'Accreditations' : 'Acreditaciones'}</a>
+        <a href={isEnglish ? '/en/news' : '/noticias'} class="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">{isEnglish ? 'News' : 'Noticias'}</a>
+        <a href={isEnglish ? '/en/contact' : '/contacto'} class="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">{isEnglish ? 'Contact' : 'Contacto'}</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a href={isEnglish ? '/en/contact' : '/contacto'} class="hidden md:inline-flex bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
+          {isEnglish ? 'Contact Us' : 'Contáctanos'}
+        </a>
+
+        <!-- Mobile menu button -->
+        <button class="lg:hidden p-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

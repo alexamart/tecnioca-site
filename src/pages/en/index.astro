@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServiceCard from '../../components/ServiceCard.tsx';
+---
+
+<BaseLayout title="Tecnioca - Industrial inspection and control services" lang="en">
+  <Header slot="header" lang="en" />
+  
+  <!-- Hero Section -->
+  <section class="relative">
+    <img src="/images/hero.jpg" alt="Tecnioca Services" class="w-full h-64 md:h-96 object-cover" />
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div class="text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Our Services</h1>
+        <p class="text-xl md:text-2xl">Quality industrial inspections and control</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">What do we do?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard 
+          title="OCA - Low voltage" 
+          description="Initial and periodic inspections (every 5 years) in low voltage electrical installations." 
+          image="/images/baja-tension.jpg" 
+          link="/en/low-voltage" 
+          client:load 
+        />
+        <ServiceCard 
+          title="OCA - High voltage" 
+          description="Transformer Centers up to 30kV and High Voltage Power Lines." 
+          image="/images/alta-tension.jpg" 
+          link="/en/high-voltage" 
+          client:load 
+        />
+        <ServiceCard 
+          title="OCA - Pressure equipment" 
+          description="Inspections at the installation site and periodic, according to the regulations." 
+          image="/images/equipos-presion.jpg" 
+          link="/en/pressure-equipment" 
+          client:load 
+        />
+        <ServiceCard 
+          title="OCA - Combustible gases" 
+          description="Initial and periodic inspections according to applicable regulations." 
+          image="/images/gases-combustibles.jpg" 
+          link="/en/combustible-gases" 
+          client:load 
+        />
+        <ServiceCard 
+          title="EICI - Low voltage (non-industrial)" 
+          description="Inspections according to Order 9344/2003 of the Minister of Economy and Technological Innovation." 
+          image="/images/eici-baja-tension.jpg" 
+          link="/en/low-voltage-non-industrial" 
+          client:load 
+        />
+        <ServiceCard 
+          title="EICI - Pressure equipment" 
+          description="Inspections according to Order of March 23, 2016 of the Ministry of Economy, Employment and Finance." 
+          image="/images/eici-equipos-presion.jpg" 
+          link="/en/pressure-equipment-2" 
+          client:load 
+        />
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" lang="en" />
+</BaseLayout>

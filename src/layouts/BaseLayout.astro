@@ -1,0 +1,64 @@
+---
+import '../pages/styles.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+}
+
+const { title, description = "Tecnioca - Servicios de inspección y control industrial", lang = "es" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth" style="background-color: #0f172a;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Theme script - must run BEFORE Tailwind to prevent flash -->
+  <script is:inline>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      const isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.backgroundColor = '#0f172a';
+      } else {
+        document.documentElement.style.backgroundColor = '#f8fafc';
+      }
+    })();
+  </script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script is:inline>
+    (() => {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.tailwindcss.com';
+      script.onload = () => {
+        window.tailwind.config = { darkMode: 'class' };
+      };
+      document.head.appendChild(script);
+    })();
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-['Inter'] antialiased">
+  <slot name="header" />
+  <main class="min-h-screen">
+    <slot />
+  </main>
+  <slot name="footer" />
+</body>
+</html>
+
+<style is:global>
+  .font-display {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Términos de Servicio - Tecnioca" lang="es">
+  <Header slot="header" lang="es" />
+  
+  <main class="min-h-screen">
+    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold font-display mb-4">Términos de Servicio</h1>
+      </div>
+    </div>
+
+    <section class="py-20 bg-white dark:bg-slate-800">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+          Estos términos de servicio rigen el uso de nuestros servicios de inspección industrial. Al utilizar nuestros servicios, aceptas estar vinculado por estos términos.
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer slot="footer" lang="es" />
+</BaseLayout>

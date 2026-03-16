@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Misión y Valores - Tecnioca" lang="es">
+  <Header slot="header" lang="es" />
+  
+  <main class="min-h-screen">
+    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold font-display mb-4">Misión y Valores</h1>
+        <p class="text-xl text-blue-100">Lo que nos define como empresa</p>
+      </div>
+    </div>
+
+    <section class="py-20 bg-white dark:bg-slate-800">
+      <div class="container mx-auto px-4 max-w-4xl space-y-12">
+        <div>
+          <h2 class="text-3xl font-bold font-display mb-4 text-slate-900 dark:text-white">Nuestra Misión</h2>
+          <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+            Proporcionar servicios de inspección y control industrial de alto nivel, garantizando la seguridad y cumplimiento normativo de nuestros clientes.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold font-display mb-4 text-slate-900 dark:text-white">Nuestros Valores</h2>
+          <ul class="space-y-3 text-lg text-slate-700 dark:text-slate-300">
+            <li><strong>Excelencia:</strong> Compromiso con la calidad en todos nuestros servicios</li>
+            <li><strong>Seguridad:</strong> Prioridad en la protección y cumplimiento normativo</li>
+            <li><strong>Profesionalidad:</strong> Equipo altamente cualificado y certificado</li>
+            <li><strong>Confiabilidad:</strong> Años de experiencia y referencias de calidad</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer slot="footer" lang="es" />
+</BaseLayout>

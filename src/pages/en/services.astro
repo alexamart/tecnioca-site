@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Services - Tecnioca" lang="en">
+  <Header slot="header" lang="en" />
+  
+  <main class="min-h-screen">
+    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold font-display mb-4">Our Services</h1>
+        <p class="text-xl text-blue-100">Quality industrial inspection and control</p>
+      </div>
+    </div>
+
+    <section class="py-20 bg-white dark:bg-slate-800">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="space-y-12">
+          <div>
+            <h2 class="text-3xl font-bold font-display mb-4 text-slate-900 dark:text-white">OCA Services</h2>
+            <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              As an Authorized Control Organization, we offer inspections in low voltage, high voltage, pressure equipment and combustible gases.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold font-display mb-4 text-slate-900 dark:text-white">EICI Services</h2>
+            <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              As a Certified Industrial Inspection Entity, we perform specialized inspections in accordance with applicable regulations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer slot="footer" lang="en" />
+</BaseLayout>
