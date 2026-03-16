@@ -21,6 +21,13 @@ const { title, description = "Tecnioca - Servicios de inspección y control indu
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style is:inline>
+    html { background-color: #0f172a; color: #f8fafc; }
+    html.light { background-color: #f8fafc; color: #0f172a; }
+    body { opacity: 0; transition: opacity 160ms ease-in-out; }
+    html.ready body { opacity: 1; }
+  </style>
   
   <!-- Theme script - must run BEFORE Tailwind to prevent flash -->
   <script is:inline>
@@ -29,10 +36,14 @@ const { title, description = "Tecnioca - Servicios de inspección y control indu
       const isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
       if (isDark) {
         document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
         document.documentElement.style.backgroundColor = '#0f172a';
       } else {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
         document.documentElement.style.backgroundColor = '#f8fafc';
       }
+      document.documentElement.classList.add('ready');
     })();
   </script>
   
