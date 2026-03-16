@@ -12,11 +12,11 @@ const isEnglish = lang === 'en';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       <!-- Company Info -->
       <div class="lg:col-span-2">
-        <div class="flex items-center space-x-4 mb-4">
-          <img src="/images/logo.png" alt="Tecnioca" class="h-12 w-auto" />
-          <div>
-            <h3 class="text-xl font-bold font-display">TECNIOCA</h3>
-            <p class="text-slate-400 text-sm">{isEnglish ? 'Industrial Inspection & Control' : 'Inspección y Control Industrial'}</p>
+        <div class="flex flex-col md:flex-row md:items-center md:space-x-4 mb-4">
+          <img src="/images/logo.png" alt="Tecnioca" class="h-8 md:h-12 w-auto mb-3 md:mb-0" />
+          <div class="text-center md:text-left">
+            <h3 class="text-lg md:text-xl font-bold font-display">TECNIOCA</h3>
+            <p class="text-slate-400 text-xs md:text-sm">{isEnglish ? 'Industrial Inspection & Control' : 'Inspección y Control Industrial'}</p>
           </div>
         </div>
         <p class="text-slate-300 mb-6 max-w-md">
