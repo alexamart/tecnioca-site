@@ -21,7 +21,7 @@ const LanguageSwitcher: React.FC = () => {
   };
 
   return (
-    <button onClick={switchLanguage} className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600">
+    <button onClick={switchLanguage} className="px-2 py-1 text-xs md:text-sm md:px-3 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600">
       {currentLang}
     </button>
   );
