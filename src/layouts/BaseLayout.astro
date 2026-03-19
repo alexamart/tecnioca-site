@@ -11,7 +11,7 @@ const { title, description = "Tecnioca - Servicios de inspección y control indu
 ---
 
 <!DOCTYPE html>
-<html lang={lang} class="scroll-smooth" style="background-color: #0f172a;">
+<html lang={lang} class="scroll-smooth not-ready" style="background-color: #0f172a;">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,8 +25,9 @@ const { title, description = "Tecnioca - Servicios de inspección y control indu
   <style is:inline>
     html { background-color: #0f172a; color: #f8fafc; }
     html.light { background-color: #f8fafc; color: #0f172a; }
+    html.not-ready body { visibility: hidden; }
     body { opacity: 0; transition: opacity 160ms ease-in-out; }
-    html.ready body { opacity: 1; }
+    html.ready body { opacity: 1; visibility: visible; }
     #page-loader {
       position: fixed;
       inset: 0;
@@ -73,6 +74,7 @@ const { title, description = "Tecnioca - Servicios de inspección y control indu
         document.documentElement.classList.remove('dark');
         document.documentElement.style.backgroundColor = '#f8fafc';
       }
+      document.documentElement.classList.remove('not-ready');
       document.documentElement.classList.add('theme-ready');
     })();
   </script>
